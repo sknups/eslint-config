@@ -1,0 +1,31 @@
+{
+  "name": "@sknups/eslint-config",
+  "version": "1.0.0",
+  "description": "eslint configuration for SKNUPS",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "homepage": "https://github.com/sknups/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sknups/eslint-config.git"
+  },
+  "license": "MIT",
+  "author": "SKNUPS",
+  "main": "index.js",
+  "files": [],
+  "scripts": {
+    "auth": "npx google-artifactregistry-auth"
+  },
+  "peerDependencies": {
+    "eslint": "^8.29.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1"
+  },
+  "engines": {
+    "npm": ">=8.1.0"
+  }
+}
