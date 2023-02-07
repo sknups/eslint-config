@@ -280,6 +280,11 @@ module.exports = {
     'promise/prefer-await-to-then': 'error',
     'promise/prefer-await-to-callbacks': 'error',
 
+    "jsdoc/no-undefined-types": ['warn', {
+      "definedTypes": [
+        "RegExpMatchArray"
+      ]
+    }],
     'jsdoc/require-param-description': 'off',
     'jsdoc/require-property-description': 'off',
     'jsdoc/require-returns-description': 'off',
