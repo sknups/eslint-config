@@ -281,9 +281,9 @@ module.exports = {
 
     'promise/prefer-await-to-then': 'error',
     'promise/prefer-await-to-callbacks': 'error',
-    'promise/always-return': ['error', {
-      ignoreLastCallback: true
-    }],
+
+    // disabling due to false positives
+    'promise/always-return': 'off',
 
     "jsdoc/no-undefined-types": ['warn', {
       "definedTypes": [
