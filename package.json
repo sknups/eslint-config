@@ -1,6 +1,6 @@
 {
   "name": "@sknups/eslint-config",
-  "version": "1.2.0",
+  "version": "0.0.1-snapshot",
   "description": "eslint configuration for SKNUPS",
   "keywords": [
     "eslint",
@@ -13,8 +13,10 @@
   },
   "license": "MIT",
   "author": "SKNUPS",
-  "main": "index.js",
-  "files": [],
+  "exports": "./index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "auth": "npx google-artifactregistry-auth"
   },

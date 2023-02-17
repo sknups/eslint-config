@@ -1,0 +1,23 @@
+---
+name: Build
+
+'on': workflow_call
+
+jobs:
+
+  build:
+
+    name: 'Build'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Execute ShellCheck
+        uses: ludeeus/action-shellcheck@master
+
+      - name: Execute YAMLlint
+        run: |
+          yamllint .
