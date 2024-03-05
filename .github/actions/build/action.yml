@@ -1,0 +1,23 @@
+name: Build
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Nodejs 18
+      id: 'node'
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Configure npm
+      shell: bash
+      run: |
+        npm config set update-notifier false
+        npm config set audit false
+        npm config set fund false
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        npm ci

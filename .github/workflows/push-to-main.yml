@@ -1,0 +1,40 @@
+name: Publish
+
+'on':
+  push:
+    branches:
+      - main
+    tags:
+      - v*
+    paths-ignore:
+      - README.md
+
+jobs:
+
+  build:
+    name: Build & Publish
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+  
+    permissions:
+      contents: "read"
+      id-token: "write"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        uses: ./.github/actions/build
+
+      - name: Authenticate Google Cloud
+        id: 'auth'
+        uses: 'google-github-actions/auth@v2'
+        with:         
+          workload_identity_provider: projects/702125700768/locations/global/workloadIdentityPools/github-identity-pool/providers/github-identity-provider
+          service_account: npm-public-writer-gh@sknups.iam.gserviceaccount.com
+
+      - name: Publish npm package
+        uses: sknups/publish-npm-package@v2
+        with:
+          credentials_file_path: ${{ steps.auth.outputs.credentials_file_path }}
