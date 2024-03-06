@@ -1,6 +1,6 @@
 {
   "name": "@sknups/eslint-config",
-  "version": "1.2.2",
+  "version": "0.0.1-snapshot",
   "description": "eslint configuration for SKNUPS",
   "keywords": [
     "eslint",
@@ -15,9 +15,6 @@
   "author": "SKNUPS",
   "main": "index.js",
   "files": [],
-  "scripts": {
-    "auth": "npx google-artifactregistry-auth"
-  },
   "peerDependencies": {
     "eslint": "^8.29.0",
     "eslint-plugin-import": "^2.26.0",
