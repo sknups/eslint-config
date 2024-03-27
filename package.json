@@ -1,7 +1,10 @@
 {
   "name": "@sknups/eslint-config",
   "version": "0.0.1-snapshot",
-  "description": "eslint configuration for SKNUPS",
+  "description": "eslint configuration for JavaScript at SKNUPS",
+  "scripts": {
+    "compile": "npx tsc -p ./tsconfig.json"
+  },
   "keywords": [
     "eslint",
     "eslintconfig"
@@ -16,14 +19,18 @@
   "main": "index.js",
   "files": [],
   "peerDependencies": {
-    "eslint": "^8.29.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^39.9.1",
     "eslint-plugin-json": "^3.1.0",
-    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1"
   },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
   "engines": {
-    "npm": ">=8.1.0"
+    "node": ">=18.19.1",
+    "npm": ">=10.2.4"
   }
 }

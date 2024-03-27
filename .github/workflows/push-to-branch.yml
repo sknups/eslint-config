@@ -1,12 +1,17 @@
 ---
-name: Push to main
+name: Push to branch
 
 'on':
   push:
     branches:
+      - '*'
+      - '!main'
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+  pull_request:
+    branches:
       - 'main'
-    tags:
-      - 'v*'
     paths-ignore:
       - 'README.md'
       - '.gitignore'
@@ -15,7 +20,7 @@ jobs:
 
   build:
 
-    name: Build & Publish
+    name: Build
     runs-on: ubuntu-22.04
 
     permissions:
@@ -40,6 +45,3 @@ jobs:
         with:
           skip_lint: true
           skip_test: true
-
-      - name: Publish npm package
-        uses: sknups/sknups-npm-publish-action@v1
